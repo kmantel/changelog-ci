@@ -390,6 +390,8 @@ class ChangelogCI:
             self._comment_changelog(string_data)
             subprocess.run(['echo', '::endgroup::'])
 
+        subprocess.run(['echo', '::set-output name=changelog::', string_data])
+
 
 def parse_config(config):
     """Parse and Validates user provided config, raises Error if not valid"""
